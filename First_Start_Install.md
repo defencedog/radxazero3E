@@ -31,6 +31,6 @@ Watch how to add [external stores](https://community.zimaspace.com/t/how-to-add-
 - ttydBridge
 - Btop
 - Glances
-- Jellyfin (from default CasaOS store its RKMPP support produce better results)
+- Jellyfin (from default CasaOS store its RKMPP support produce better results. Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/general/administration/hardware-acceleration/rockchip/))
 ### sist2 
 Its an an advance file searcher / indexer. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
