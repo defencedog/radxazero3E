@@ -56,4 +56,4 @@ writable = Yes
 browseable = Yes
 valid users = ukhan #Delete line, for Public access
 ```
-
+Finally to make changes persistent `sudo systemctl restart smbd`
