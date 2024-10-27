@@ -1,4 +1,4 @@
-name: magical_christopher
+name: sist2
 services:
   elasticsearch:
     cpu_shares: 90
