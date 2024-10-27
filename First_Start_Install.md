@@ -12,6 +12,8 @@ sudo apt install -y mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35x
 ### Samba sharing 
 To be installed using `sudo armbian-config` > Software > Softy
 - Samba
+- OpenMediaVault (OMV) not working with Bookworm :(
+- Setup windows drives with my [previous instructions](https://github.com/defencedog/orangepi3b_v2.1/blob/main/SAMBA_NAS_Videos.md)
 ## CasaOS
 ### Install
 ```
