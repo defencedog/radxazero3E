@@ -1,0 +1,104 @@
+name: linuxserver-calibre
+services:
+  app:
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      - CUSTOM_HTTPS_PORT	Int=9081
+      - CUSTOM_PORT=9080
+      - DRINODE=/dev/dri/renderD128
+      - PGID=1000
+      - PUID=1000
+      - TITLE=Calibre-ukhan
+      - TZ=Europe/Istanbul
+    image: linuxserver/calibre:7.20.0
+    labels:
+      icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-logo.png
+    ports:
+      - target: 9080
+        published: "9080"
+        protocol: tcp
+      - target: 8181
+        published: "8181"
+        protocol: tcp
+      - target: 9081
+        published: "9081"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/calibre/config
+        target: /config
+      - type: bind
+        source: /media
+        target: /media
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+        - container: PASSWORD
+          description:
+            en_us: Optionally set a password for the gui.
+        - container: CLI_ARGS
+          description:
+            en_us: Optionally pass cli start arguments to calibre.
+      ports:
+        - container: "8080"
+          description:
+            en_us: GUI Port - Default 8080
+        - container: "8081"
+          description:
+            en_us: Webserver Port - Default 8081
+      volumes:
+        - container: /config
+          description:
+            en_us: Appdata
+    cap_add: []
+    networks:
+      - default
+    privileged: false
+    container_name: ""
+    hostname: ""
+networks:
+  default:
+    name: linuxserver-calibre_default
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  author: WisdomSky
+  category: LinuxServer.io
+  description:
+    en_us: "Visit homepage: https://hub.docker.com/r/linuxserver/calibre/"
+  developer: LinuxServer.io
+  hostname: ""
+  icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-logo.png
+  index: /
+  is_uncontrolled: false
+  main: app
+  port_map: "9080"
+  project_url: https://calibre-ebook.com/
+  scheme: http
+  store_app_id: linuxserver-calibre
+  tagline:
+    en_us: A powerful and easy to use e-book manager. Users say it's outstanding and
+      a must-have. It'll allow you to do nearly everything and it takes things a
+      step beyond normal e-book software. It's also completely free and open
+      source and great for both casual users and computer experts.
+  thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-logo.png
+  title:
+    custom: Calibre
+    en_us: Calibre
