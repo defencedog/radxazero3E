@@ -17,16 +17,18 @@ Recoll WebUI & CasaOS
 git clone https://github.com/koniu/recoll-webui.git
 sudo nano /etc/rc.local
 ```
-contents
+contents appended to file
 ```
 su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
 exit 0
+```
+Preparation to start search & create index
 ```
 mkdir ~/.recoll
 cd ~/.recoll
 touch recoll.conf
 ```
-contents
+contents of file
 ```
 # search paths
 topdirs = /media/nas_1/UK_Docz/Standards_API /media/nas_1/Unsorted_Books /media/nas_1/UK_Docz/Books
@@ -43,3 +45,11 @@ tesseractlang = eng
 #disable multi-threading on arm64
 thrQSizes = -1 -1 -1
 ```
+After this initiate first command to index data `recollindex -z` [Manpage](https://www.recoll.org/manpages/recollindex.1.html)
+
+At CasaOs homepage click + at top right _Add external link_
+> Link: http://192.168.1.6:9080
+> 
+> Title: Recoll
+> 
+> Icon: https://www.recoll.org/pics/recoll64.png
