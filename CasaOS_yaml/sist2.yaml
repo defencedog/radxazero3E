@@ -1,0 +1,82 @@
+name: magical_christopher
+services:
+  elasticsearch:
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    environment:
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - PGID=1000
+      - PUID=1000
+      - discovery.type=single-node
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0-arm64
+    ports:
+      - target: 9200
+        published: "9200"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/sist2-es-data/
+        target: /usr/share/elasticsearch/data
+      - type: bind
+        source: /media
+        target: /media
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+  sist2-admin:
+    cpu_shares: 90
+    command:
+      - /root/sist2-admin/sist2_admin/app.py
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    entrypoint:
+      - python3
+    image: simon987/sist2:arm64-linux
+    ports:
+      - target: 4090
+        published: "4090"
+        protocol: tcp
+      - target: 8080
+        published: "4091"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/sist2-admin-data/
+        target: /sist2-admin
+      - type: bind
+        source: /
+        target: /host
+      - type: bind
+        source: /media
+        target: /media
+    working_dir: /root/sist2-admin/
+    devices: []
+    cap_add: []
+    environment: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: ""
+  index: /
+  is_uncontrolled: false
+  port_map: "4091"
+  scheme: http
+  store_app_id: magical_christopher
+  title:
+    custom: sist2
