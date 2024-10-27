@@ -25,7 +25,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 Watch how to add [external stores](https://community.zimaspace.com/t/how-to-add-casaos-linuxserver-app-store-to-casaos/292/1)
 ### Samba sharing (must be installed AFTER CasaOS; dependencies conflict otherwise)
 To be installed using `sudo armbian-config` > Software > Softy
-- Samba
+- ~~Samba~~ taken care by CasaOS
 - OpenMediaVault (OMV) not working with Bookworm :(
 - Setup windows drives with my [previous instructions](https://github.com/defencedog/orangepi3b_v2.1/blob/main/SAMBA_NAS_Videos.md)
 ### Favourite Docker Services
