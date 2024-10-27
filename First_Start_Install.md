@@ -41,8 +41,8 @@ Its an an advance file searcher / indexer. Had to be manually installed in CasaO
 ### Samba sharing with CasaOS
 The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (external USB or memory card) mounted at `/media/sdcard` (use `df -hT` to know mount points) To make it a NAS with name _radxasdcard_
 ```
-sudo chown -R $USER:$USER /media/sdcard
-sudo chmod 777 /media/sdcard
+sudo chown -R $USER:$USER /media/sdcard #Step essential if partition is of ext4 type
+sudo chmod 777 /media/sdcard #Step essential if partition is of ext4 type
 sudo smbpasswd -a ukhansmb #add a user it can be any name & set password
 sudo nano /etc/samba/smb.casa.conf
 ```
