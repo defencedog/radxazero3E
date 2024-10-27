@@ -39,7 +39,7 @@ Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/gener
 - sist2 
 Its an an advance file searcher / indexer. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
 ### Samba sharing with CasaOS
-The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (externeal USB . memory card) mount at `/media/sdcard` To make it a NAS with name _radxasdcard_
+The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (external USB or memory card) mounted at `/media/sdcard` To make it a NAS with name _radxasdcard_
 ```
 sudo smbpasswd -a ukhan #add a user & set password
 sudo nano /etc/samba/smb.casa.conf
