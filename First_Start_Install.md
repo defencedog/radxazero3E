@@ -38,4 +38,22 @@ To be installed using `sudo armbian-config` > Software > Softy
 Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/general/administration/hardware-acceleration/rockchip/) Remember to add x4 devices.  `/dev/mali0` is not present on RK3566 also remember to create `99-rk-device-permissions.rules` as written in instructions. In CasaOS `Priveleges` slider should be ON
 - sist2 
 Its an an advance file searcher / indexer. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
+### Samba sharing with CasaOS
+The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (externeal USB . memory card) mount at `/media/sdcard` To make it a NAS with name _radxasdcard_
+```
+sudo smbpasswd -a ukhan #add a user & set password
+sudo nano /etc/samba/smb.casa.conf
+```
+Append to file contents; share only available to user _ukhan_
+```
+[radxasdcard]
+comment = CasaOS share external sdcard
+path = /media/sdcard
+read only = No
+public = No #Yes, for Public access
+guest ok = No #Yes, for Public access
+writable = Yes
+browseable = Yes
+valid users = ukhan #Delete line, for Public access
+```
 
