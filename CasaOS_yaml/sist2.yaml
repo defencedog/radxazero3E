@@ -1,4 +1,4 @@
-name: sist2
+name: sist2-search
 services:
   elasticsearch:
     cpu_shares: 90
