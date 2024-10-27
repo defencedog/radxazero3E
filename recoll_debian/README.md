@@ -17,10 +17,10 @@ Recoll WebUI & CasaOS
 git clone https://github.com/koniu/recoll-webui.git
 sudo nano /etc/rc.local
 ```
-> su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>'
-> 
-> exit 0
->
+contents
+```
+su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
+exit 0
 ```
 mkdir ~/.recoll
 cd ~/.recoll
