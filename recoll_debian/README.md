@@ -12,5 +12,34 @@ Archive contents
 ├── recollcmd_1.40.3-1~ppa1~jammy1_arm64.deb
 └── recollgui_1.40.3-1~ppa1~jammy1_arm64.deb
 ```
-Recoll WebUI
-https://github.com/koniu/recoll-webui
+Recoll WebUI & CasaOS
+```
+git clone https://github.com/koniu/recoll-webui.git
+sudo nano /etc/rc.local
+```
+> su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>'
+> 
+> exit 0
+>
+```
+mkdir ~/.recoll
+cd ~/.recoll
+touch recoll.conf
+```
+contents
+```
+# search paths
+topdirs = /media/nas_1/UK_Docz/Standards_API /media/nas_1/Unsorted_Books /media/nas_1/UK_Docz/Books
+
+compressedfilemaxkbs = -1
+
+aspellLanguage = en
+noaspell = 1
+
+pdfocr = 1
+ocrprogs = tesseract
+tesseractlang = eng
+
+#disable multi-threading on arm64
+thrQSizes = -1 -1 -1
+```
