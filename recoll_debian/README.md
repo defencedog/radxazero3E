@@ -12,3 +12,5 @@ Archive contents
 ├── recollcmd_1.40.3-1~ppa1~jammy1_arm64.deb
 └── recollgui_1.40.3-1~ppa1~jammy1_arm64.deb
 ```
+Recoll WebUI
+https://github.com/koniu/recoll-webui
