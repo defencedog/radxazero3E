@@ -1,7 +1,7 @@
 Latest Recoll `1.4` for `arm64` is not avaialble under Debian. These `.debs` are extracted from official Ubuntu Jammy PPA & offers no dependancy conflicts with Debian Bookworm
 ```
 sudo apt install -s /*.deb # simulate install to know of any error
-sudo apt install -y 7*.deb
+sudo apt install -y /*.deb
 ```
 Archive contents
 ```
