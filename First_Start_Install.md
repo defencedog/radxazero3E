@@ -7,9 +7,12 @@ Use Debian Bookworm Server edition under Armbian [images available](https://www.
 Get following packages not availble by default
 ```
 sudo apt install update && sudo apt upgrade -y
-sudo apt install -y mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35xx python-is-python3 
+sudo apt install -y 7zip mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35xx python-is-python3 
 ```
-
+## Install Recoll 
+Instructions [in this repo](https://github.com/defencedog/radxazero3E/tree/main/recoll_debian)
+## Install ripgrepall
+Pre-compiled binaries [in this repo](https://github.com/defencedog/orangepi3b_v2.1/tree/main/files_tools/ripgrep-all)
 ## CasaOS
 ### Install
 ```
@@ -26,7 +29,7 @@ Watch how to add [external stores](https://community.zimaspace.com/t/how-to-add-
 ### Samba sharing (must be installed AFTER CasaOS; dependencies conflict otherwise)
 To be installed using `sudo armbian-config` > Software > Softy
 - ~~Samba~~ taken care by CasaOS
-- OpenMediaVault (OMV) not working with Bookworm :(
+- OpenMediaVault (OMV) not working with Bookworm :( Alternative is `cockpit`
 - Setup windows drives with my [previous instructions](https://github.com/defencedog/orangepi3b_v2.1/blob/main/SAMBA_NAS_Videos.md)
 ### Favourite Docker Services
 - ttydBridge
@@ -34,10 +37,17 @@ To be installed using `sudo armbian-config` > Software > Softy
 - Glances
 - Dozzle
 ### Favourite Docker Apps
+Some CasaOS compatible `yamls` are present [here](https://github.com/defencedog/radxazero3E/tree/main/CasaOS_yaml)
 - Jellyfin (from default CasaOS store its RKMPP support produce better results)
 Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/general/administration/hardware-acceleration/rockchip/) Remember to add x4 devices.  `/dev/mali0` is not present on RK3566 also remember to create `99-rk-device-permissions.rules` as written in instructions. In CasaOS `Priveleges` slider should be ON
 - sist2 
 Its an an advance file searcher / indexer. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
+- Syncthing
+Its an sunchronisation service to sync multiple locations in multiple devices
+- Calibre
+A library database creator / editor with _full-text search_ [FTS capability](https://calibre-ebook.com/new-in/fifteen)
+- Calibre-Web
+A GUI reader / webUI for library database created by Calibre
 ### Samba sharing with CasaOS
 The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (external USB or memory card) mounted at `/media/sdcard` (use `df -hT` to know mount points) To make it a NAS with name _radxasdcard_
 ```
@@ -59,3 +69,5 @@ browseable = Yes
 valid users = ukhansmb #Delete line, for Public access
 ```
 Finally to make changes persistent `sudo systemctl restart smbd`
+### OCI / Port-bind Bug CasaOS
+Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
