@@ -17,3 +17,9 @@ Finally I used some old debian packages. It must be noted in official [Docker do
 ```
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get reinstall $pkg; done
 ```
+After a reboot `hold` these packages to avoid update
+```
+sudo apt-mark hold docker-* python3-compose* python3-docker* runc crun podman* containerd containernetworking-*
+```
+To view previous held packages `apt-mark showhold`
+To un-hold held packages `sudo apt-mark unhold $(apt-mark showhold)`
