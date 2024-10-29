@@ -1,3 +1,5 @@
+# Overlays compiled with Kernel 6.1.75-vendor-rk35xx
+
 Here are overlays for *zero3E* both sources & build. An archived clone of https://github.com/radxa-pkg/radxa-overlays
 ```
 sudo nano /boot/armbianEnv.txt
