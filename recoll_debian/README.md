@@ -21,7 +21,7 @@ Preparation to start search & create index
 ```
 mkdir ~/.recoll
 cd ~/.recoll
-touch recoll.conf
+nano recoll.conf
 ```
 contents of file
 ```
