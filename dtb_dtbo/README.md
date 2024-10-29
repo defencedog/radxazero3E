@@ -5,7 +5,8 @@ Here are overlays for *zero3E* both sources & build. An archived clone of https:
 sudo nano /boot/armbianEnv.txt
 # modify -> overlay_prefix=rk3568
 7z x radxa-zero3e_compiled_dtbo.7z
-cp *.dtbo /boot/dtb/rockchip/overlay/
+sudo cp *.dtbo /boot/dtb/rockchip/overlay/
+sudo reboot
 ```
 Now you can use `armbian-config` to activate / deactivate overlays easily
 
