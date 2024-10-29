@@ -17,16 +17,6 @@ Recoll data extraction from [external programs](https://www.recoll.org/pages/fea
 ```
 sudo apt install -y unrar poppler-utils antiword unrtf python3-chm python3-py7zr djvulibre-bin
 ```
-Recoll WebUI & CasaOS
-```
-git clone https://github.com/koniu/recoll-webui.git
-sudo nano /etc/rc.local
-```
-contents appended to file
-```
-su <user> -c 'cd /home/<user>/recoll-webui && ./webui-standalone.py -p 9080 -a <host ip>' 
-exit 0
-```
 Preparation to start search & create index
 ```
 mkdir ~/.recoll
@@ -51,6 +41,18 @@ tesseractlang = eng
 thrQSizes = -1 -1 -1
 ```
 After this initiate first command to index data `recollindex -z` [Manpage](https://www.recoll.org/manpages/recollindex.1.html)
+
+Recoll WebUI & CasaOS
+```
+git clone https://github.com/koniu/recoll-webui.git
+sudo nano /etc/rc.local
+```
+contents appended to file
+```
+su <user> -c 'cd /home/<user>/recoll-webui && ./webui-standalone.py -p 9080 -a <host ip>' 
+exit 0
+```
+**Note webUI will run only if valid index exists before**
 
 At CasaOs homepage click + at top right _Add external link_
 > Link: http://192.168.1.6:9080
