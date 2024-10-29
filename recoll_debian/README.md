@@ -13,6 +13,10 @@ Archive contents
 ├── recollcmd_1.40.3-1~ppa1~jammy1_arm64.deb
 └── recollgui_1.40.3-1~ppa1~jammy1_arm64.deb
 ```
+Recoll data extraction from [external programs](https://www.recoll.org/pages/features.html#doctypes.helpers)
+```
+sudo apt install -y unrar poppler-utils antiword unrtf python3-chm python3-py7zr djvulibre-bin
+```
 Recoll WebUI & CasaOS
 ```
 git clone https://github.com/koniu/recoll-webui.git
