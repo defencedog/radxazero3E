@@ -15,7 +15,7 @@ Archive contents
 ```
 Recoll data extraction from [external programs](https://www.recoll.org/pages/features.html#doctypes.helpers)
 ```
-sudo apt install -y unrar poppler-utils antiword unrtf python3-chm python3-py7zr djvulibre-bin
+sudo apt install -y unrar gir1.2-poppler-0.18 pdftk-java ocrmypdf poppler-utils antiword unrtf python3-chm python3-py7zr djvulibre-bin 
 ```
 Preparation to start search & create index
 ```
