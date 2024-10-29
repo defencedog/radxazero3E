@@ -7,7 +7,7 @@ Use Debian Bookworm Server edition under Armbian [images available](https://www.
 Get following packages not availble by default
 ```
 sudo apt install update && sudo apt upgrade -y
-sudo apt install -y mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35xx
+sudo apt install -y mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35xx python-is-python3 
 ```
 
 ## CasaOS
