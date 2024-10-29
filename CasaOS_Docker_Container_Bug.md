@@ -13,7 +13,7 @@ Sometimes it changes to something more gibbersish but in the end CasaOS fails to
 
 Some user insisted its a memeru leak / resources [problem](https://github.com/getsentry/self-hosted/issues/1438#issuecomment-1119860236) Then I tried to edit `/etc/security/limits.conf` as explained in [RHEL tutorial](https://access.redhat.com/solutions/22105) but didn't succeed 
 
-Finally I used some old debian packages. Issued the following command & it skipped some packages but did install some other legacy packages. After this my existing CasaOS containers were completely removed. I installed new ones with no error
+Finally I used some old debian packages. It must be noted in official [Docker documentation](https://docs.docker.com/engine/install/ubuntu/) these legacy packages are meant to be removed! Issued the following command & it skipped some packages but did install some other legacy packages. After this my existing CasaOS containers were completely removed. I installed new ones with no error
 ```
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get reinstall $pkg; done
 ```
