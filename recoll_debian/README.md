@@ -55,7 +55,7 @@ exit 0
 **Note webUI will run only if valid index exists before**
 
 At CasaOs homepage click + at top right _Add external link_
-> Link: http://192.168.1.6:9080
+> Link: http://<host ip>:9080
 > 
 > Title: Recoll
 > 
