@@ -19,7 +19,7 @@ sudo nano /etc/rc.local
 ```
 contents appended to file
 ```
-su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
+su <user> -c 'cd /home/<user>/recoll-webui && ./webui-standalone.py -p 9080 -a <host ip>' 
 exit 0
 ```
 Preparation to start search & create index
