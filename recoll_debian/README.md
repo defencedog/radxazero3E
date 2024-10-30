@@ -39,8 +39,12 @@ tesseractlang = eng
 
 #disable multi-threading on arm64
 thrQSizes = -1 -1 -1
+
+#logging
+idxloglevel = 5
+idxlogfilename = stderr
 ```
-After this initiate first command to index data `recollindex -z` [Manpage](https://www.recoll.org/manpages/recollindex.1.html)
+After this initiate first command to index data `recollindex -z 2>&1 | tee ~/recollindex.log` [Manpage](https://www.recoll.org/manpages/recollindex.1.html) For incremental indexes use `recollindex -k 2>&1 | tee ~/recollindex.log`
 
 Recoll WebUI & CasaOS
 ```
