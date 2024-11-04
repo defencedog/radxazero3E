@@ -48,12 +48,12 @@ After this initiate first command to index data `recollindex -z 2>&1 | tee ~/rec
 
 Recoll WebUI & CasaOS
 ```
-git clone https://github.com/koniu/recoll-webui.git
+git clone https://framagit.org/medoc92/recollwebui.git #python3 webui
 sudo nano /etc/rc.local
 ```
 contents appended to file
 ```
-su <user> -c 'cd /home/<user>/recoll-webui && ./webui-standalone.py -p 9080 -a <host ip>' 
+su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
 exit 0
 ```
 **Note webUI will run only if valid index exists before**
