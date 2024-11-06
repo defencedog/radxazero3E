@@ -73,7 +73,9 @@ Finally to make changes persistent `sudo systemctl restart smbd`
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
 
 ## Python3
-First install `sudo apt install python3-pip` then install packages **without root** like `pip install plotext psutil jupyter numpy sympy coolprop --break-system-packages` This will create a new _environment_ or a _directory_ that has all python executables & libraries. To make executables available system-wide `nano ~/.bashrc` & press `Alt`+`/` go to EOF. Add
+First install `sudo apt install python3-pip` then install packages **without root** like `pip install plotext psutil jupyter numpy sympy coolprop --break-system-packages` This will create a new _environment_ or a _directory_ that has all python executables & libraries. Afterwards restart terminal or _ssh session_. In terminal `echo $PATH` if output shows `/home/ukhan/.local/bin` following step is not required
+### Optional Step
+To make executables available system-wide `nano ~/.bashrc` & press `Alt`+`/` go to EOF. Add
 ```
 # ukhan additions
 export PATH="/home/ukhan/.local/bin:$PATH"
