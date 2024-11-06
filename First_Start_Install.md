@@ -81,4 +81,4 @@ To make executables available system-wide `nano ~/.bashrc` & press `Alt`+`/` go 
 export PATH="/home/ukhan/.local/bin:$PATH"
 ```
 Afterwards restart terminal or _ssh session_
-```
+
