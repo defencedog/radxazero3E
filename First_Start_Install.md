@@ -56,7 +56,7 @@ sudo chmod 777 /media/sdcard #Step essential if partition is of ext4 type
 sudo smbpasswd -a ukhansmb #add a user it can be any name & set password
 sudo nano /etc/samba/smb.casa.conf
 ```
-**Note** Adding user `ukhansmb` may give error _failed to add entry for the user_ so you have to do to `sudo useradd ukhansmb` or simply use linux <user> [source](https://askubuntu.com/a/362864/110979)
+**Note** Adding user `ukhansmb` may give error _failed to add entry for the user_ so you have to do to `sudo useradd ukhansmb` or simply use linux username [source](https://askubuntu.com/a/362864/110979)
 
 Append to file contents; share only available to user _ukhan_
 ```
