@@ -24,9 +24,11 @@ sudo apt-mark hold docker-* python3-compose* python3-docker* runc crun podman* c
 To view previous held packages `apt-mark showhold`
 To un-hold held packages `sudo apt-mark unhold $(apt-mark showhold)`
 
-Because of SBC's reduced RAM or weak CPU complex containers may not properly initiate at a reboot. So one can check status of each container & restart it if it is not healthy. To auto-check it [at boot time](https://superuser.com/a/449810/182018):
+Because of SBC's reduced RAM or weak CPU complex containers may not properly initiate at a reboot. So one can check status of each container & restart it if it is not healthy. To auto-check it [at boot time](https://askubuntu.com/a/335253/110979):
 ```
 sudo nano /etc/init.d/ukhan_docker
+sudo chmod +x /etc/init.d/ukhan_docker
+sudo chown root:root /etc/init.d/ukhan_docker
 sudo update-rc.d ukhan_docker defaults
 sudo service ukhan_docker enable
 sudo reboot
