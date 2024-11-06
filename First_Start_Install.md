@@ -71,3 +71,12 @@ valid users = ukhansmb #Delete line, for Public access
 Finally to make changes persistent `sudo systemctl restart smbd`
 ### OCI / Port-bind Bug CasaOS
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
+
+## Python3
+First install `sudo apt install python3-pip` then install packages **without root** like `pip install plotext psutil jupyter numpy sympy coolprop --break-system-packages` This will create a new _environment_ or a _directory_ that has all python executables & libraries. To make executables available system-wide `nano ~/.bashrc` & press `Alt`+`/` go to EOF. Add
+```
+# ukhan additions
+export PATH="/home/ukhan/.local/bin:$PATH"
+```
+Afterwards restart terminal or _ssh session_
+```
