@@ -23,3 +23,37 @@ sudo apt-mark hold docker-* python3-compose* python3-docker* runc crun podman* c
 ```
 To view previous held packages `apt-mark showhold`
 To un-hold held packages `sudo apt-mark unhold $(apt-mark showhold)`
+
+Because of SBC's reduced RAM or weak CPU complex containers may not properly initiate at a reboot. So one can check status of each container & restart it if it is not healthy. To auto-check it [at boot time](https://superuser.com/a/449810/182018):
+```
+sudo nano /etc/init.d/ukhan_docker
+sudo update-rc.d ukhan_docker defaults
+sudo service ukhan_docker enable
+sudo reboot
+```
+File contents
+
+```
+#!/bin/bash
+
+container_id_list=$(docker ps -a -q -f "status=exited" -f "status=created")
+for container_id in $container_id_list; do
+    docker restart "${container_id}"
+    # Set result based on exit code
+    [[ $? -eq 0 ]] && result="SUCCESS" || result="FAILED"
+    echo "Restart of container ${container_id} - ${result}"
+    sleep 10
+done
+```
+Output
+> Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+> 
+> 6d0d101e768d
+> 
+> Restart of container 6d0d101e768d - SUCCESS
+> 
+> Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+> 
+> 20523390e63b
+> 
+> Restart of container 20523390e63b - SUCCESS
