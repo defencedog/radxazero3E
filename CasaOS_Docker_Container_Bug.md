@@ -30,7 +30,7 @@ sudo nano /etc/init.d/ukhan_docker
 sudo chmod +x /etc/init.d/ukhan_docker
 sudo chown root:root /etc/init.d/ukhan_docker
 sudo update-rc.d ukhan_docker defaults
-sudo service ukhan_docker enable
+sudo update-rc.d ukhan_docker enable
 sudo reboot
 ```
 File contents
