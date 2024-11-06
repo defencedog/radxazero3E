@@ -54,7 +54,7 @@ The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assu
 sudo chown -R $USER:$USER /media/sdcard #Step essential if partition is of ext4 type
 sudo chmod 777 /media/sdcard #Step essential if partition is of ext4 type
 sudo smbpasswd -a ukhansmb #add a user it can be any name & set password
-sudo nano /etc/samba/smb.casa.conf
+sudo nano /etc/samba/smb.casa.conf #sometimes smb.conf
 ```
 **Note** Adding user `ukhansmb` may give error _failed to add entry for the user_ so you have to do to `sudo useradd ukhansmb` or simply use linux username [source](https://askubuntu.com/a/362864/110979)
 
