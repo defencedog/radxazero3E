@@ -79,6 +79,8 @@ guest ok = No #Yes, for Public access
 ```
 **Error**
 > set_variable_helper(No #Yes, for Public access): value is not boolean!
+>
+> smbd --foreground --no-process-group $SMBDOPTIONS (code=exited...
 > 
 Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/etc_samba)
 ### OCI / Port-bind Bug CasaS
