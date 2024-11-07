@@ -60,15 +60,27 @@ sudo nano /etc/samba/smb.casa.conf #sometimes smb.conf
 
 Append to file contents; share only available to user _ukhan_
 ```
-[radxasdcard]
-comment = CasaOS share external sdcard
-path = /media/sdcard
+[radxa2tb]
+comment = CasaOS share external hdd ntfs
+path = /media/radxa2tb
 read only = No
-public = No #Yes, for Public access
-guest ok = No #Yes, for Public access
+#public = No #Yes, for Public access
+#guest ok = No #Yes, for Public access
 writable = Yes
 browseable = Yes
 valid users = ukhansmb #Delete line, for Public access
+
+[radxa128gb]
+comment = CasaOS share external sdcard ext4
+path = /media/radxa128gb
+read only = No
+#public = No #Yes, for Public access
+#guest ok = No #Yes, for Public access
+writable = Yes
+browseable = Yes
+valid users = ukhansmb #Delete line, for Public access
+create mask = 0777
+directory mask = 0777
 ```
 Test the `smb.conf` file by isuuing command at terminal `testparm` Finally to make changes persistent `sudo systemctl restart smbd`
 
