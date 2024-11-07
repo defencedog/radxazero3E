@@ -70,8 +70,15 @@ writable = Yes
 browseable = Yes
 valid users = ukhansmb #Delete line, for Public access
 ```
-Finally to make changes persistent `sudo systemctl restart smbd`
-### OCI / Port-bind Bug CasaOS
+Test the `smb.conf` file by isuuing command at terminal `testparm` Finally to make changes persistent `sudo systemctl restart smbd`
+
+**Note** In my test under Ubuntu following lines were throwing errors & `smbd.service` could not run, so I have to remove them
+```
+public = No #Yes, for Public access
+guest ok = No #Yes, for Public access
+```
+Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/etc_samba)
+### OCI / Port-bind Bug CasaS
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
 
 ## Python3
