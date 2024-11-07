@@ -77,6 +77,9 @@ Test the `smb.conf` file by isuuing command at terminal `testparm` Finally to ma
 public = No #Yes, for Public access
 guest ok = No #Yes, for Public access
 ```
+**Error**
+> set_variable_helper(No #Yes, for Public access): value is not boolean!
+> 
 Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/etc_samba)
 ### OCI / Port-bind Bug CasaS
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
