@@ -1,0 +1,44 @@
+name: xenodochial_christiaan
+services:
+  duckdns:
+    cpu_shares: 90
+    command: []
+    container_name: duckdns
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    environment:
+      - LOG_FILE=true
+      - PGID=1000
+      - PUID=1000
+      - SUBDOMAINS=xxxx
+      - TOKEN=xxxx
+      - TZ=Europe/Istanbul
+      - UPDATE_IP=ipv4
+    hostname: duckdns
+    image: lscr.io/linuxserver/duckdns:latest
+    labels:
+      icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckdns.png
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/duckdns/config
+        target: /config
+    ports: []
+    devices: []
+    cap_add: []
+    network_mode: host
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckdns.png
+  index: /
+  is_uncontrolled: false
+  port_map: ""
+  scheme: http
+  store_app_id: xenodochial_christiaan
+  title:
+    custom: DuckDNS

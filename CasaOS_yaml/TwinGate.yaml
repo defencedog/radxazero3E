@@ -1,0 +1,40 @@
+name: enlightened_harm
+services:
+  connector:
+    cpu_shares: 90
+    command: []
+    container_name: twingate-prudent-porpoise
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    environment:
+      - TWINGATE_ACCESS_TOKEN=xxxx
+      - TWINGATE_LABEL_DEPLOYED_BY=docker
+      - TWINGATE_LABEL_HOSTNAME=`hostname`
+      - TWINGATE_LOG_ANALYTICS=v2
+      - TWINGATE_NETWORK=ukhan
+      - TWINGATE_REFRESH_TOKEN=xxxx
+    hostname: twingate-prudent-porpoise
+    image: twingate/connector:1
+    labels:
+      icon: https://www.gravatar.com/avatar/00fde4d3532ac96b387a9989e621114a?s=120&r=g&d=404
+    restart: unless-stopped
+    ports: []
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ukhan.twingate.com
+  icon: https://www.gravatar.com/avatar/00fde4d3532ac96b387a9989e621114a?s=120&r=g&d=404
+  index: /
+  is_uncontrolled: false
+  port_map: ""
+  scheme: http
+  store_app_id: enlightened_harm
+  title:
+    custom: TwinGate
