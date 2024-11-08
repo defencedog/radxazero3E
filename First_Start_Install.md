@@ -82,7 +82,7 @@ valid users = ukhansmb #Delete line, for Public access
 create mask = 0777
 directory mask = 0777
 ```
-Test the `smb.conf` file by isuuing command at terminal `testparm` Finally to make changes persistent `sudo systemctl restart smbd`
+Test the `smb.conf` file by executing command at terminal `testparm` Finally to make changes persistent `sudo systemctl restart smbd`
 
 **Note** In my test under Ubuntu following lines were throwing errors & `smbd.service` could not run, so I have to remove them
 ```
