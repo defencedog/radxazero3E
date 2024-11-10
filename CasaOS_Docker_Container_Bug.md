@@ -61,7 +61,7 @@ for container_id in $container_id_list; do
     # Set result based on exit code
     [[ $? -eq 0 ]] && result="SUCCESS" || result="FAILED"
     echo "Restart of container ${container_id} - ${result}"
-    sleep 10
+    sleep 30
 done
 ```
 At next reboot check status `sudo service ukhan_docker status`
