@@ -15,8 +15,9 @@ Some user insisted its a memory leak / resources [problem](https://github.com/ge
 
 Finally I used some old debian packages. It must be noted in official [Docker documentation](https://docs.docker.com/engine/install/ubuntu/) these legacy packages are meant to be removed but in my case I have to reinstall these! Issued the following command & it skipped some packages but did install some other legacy packages. After this my existing CasaOS containers were completely removed. I installed new ones with no error
 ```
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get reinstall $pkg; done
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc golang-github-containernetworking-plugin-dnsname; do sudo apt-get reinstall $pkg; done
 ```
+**Note** `golang-github-containernetworking-plugin-dnsname` is important for internal DNS name resolution especially if you wanr to run `paperless-ngx` stack [issue](https://github.com/paperless-ngx/paperless-ngx/discussions/7377#discussioncomment-10226382)
 After a reboot `hold` these packages to avoid update
 ```
 sudo apt-mark hold docker-* python3-compose* python3-docker* runc crun podman* containerd containernetworking-*
