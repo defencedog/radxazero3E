@@ -17,7 +17,7 @@ If you want to index some directory its better to nudge *sist2* configurations t
 Our purpose is to allow some time to resource-intensive OCR process before echoing some error & skipping file altogether
 > Configuration (side panel) > OCR
 - enable Deskew
-- enable Rotate page
+- disable Rotate page
 - In OCR arguments write `{"tesseract_timeout": 180}`
 ### Tags
 Our purpose is to assign `uncategorized` tag to all freshly added documents which user afterwards can tag 
@@ -25,7 +25,7 @@ Our purpose is to assign `uncategorized` tag to all freshly added documents whic
 - New tag name `uncategorized`
 - enable check *inbox tag*
 ### Dashboard Custom View
-In conjunctin with the above. Dashboard landing page (homepage) can further be customised
+In conjunction with the above. Dashboard landing page (homepage) can further be customised
 > Documents (side panel) > Tags (filter `uncategorized`) > View (Save as) > check Dashboard
 >
 > Dashboard (side panel) > Homepage will have all documents user need to classify properly
