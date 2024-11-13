@@ -1,7 +1,7 @@
-# Paperless-ngx for Engineering Books, Notes & LinkedIN articles
+# Paperless-ngx & Syncthing for Engineering Books, Notes & LinkedIN articles (WIP...)
 
 ## While in CasaOS
-Install using *sqlite* database to make it less resource hungry. Recall we are using RK3566 CPU with 4Gb RAM. I use document indexer *sist2* along with *paperless-ngx* & both are resource-hungry. Thus following x2 `*.yaml` in my case are woring together other following errors happen
+Install using *sqlite* database to make it less resource hungry. Recall we are using RK3566 CPU with 4Gb RAM. I use document indexer *sist2* along with *paperless-ngx* & both are resource-hungry. Thus following x2 `*.yaml` in my case are working together otherwise following errors happen
 
 > Resource not available...
 >
@@ -14,7 +14,7 @@ If you want to index some directory its better to nudge *sist2* configurations t
 
 ## While in Paperless-ngx
 ### OCR
-Our purpose is to allow some time to resource-intensive OCR process beforing echoing some error
+Our purpose is to allow some time to resource-intensive OCR process before echoing some error & skipping file altogether
 > Configuration (side panel) > OCR
 - enable Deskew
 - enable Rotate page
