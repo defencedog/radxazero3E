@@ -40,6 +40,26 @@ Radxa ROCK 3 Model C has a 40-pin expansion header. Each pin is distinguished by
 |             |           |             |  GPIO1_A4|   37  |   38  |  GPIO3_A6|             |          |            |
 |             |           |             |       GND|   39  |   40  |  GPIO3_A5|             |          |            |
 
+
+### USB Function Configuration on 40-Pin
+On the ZERO 3W / 3E's 40-Pin interface, the following pins can be configured for USB 2.0:
+
+USB2_HOST2_DM: Pin number 28, resistor location R46.
+USB2_HOST2_DP: Pin number 27, resistor location R45.
+By default, Pin-27 can be configured in software for functions such as GPIO4_B2 (see 40-Pin Pinout), while the USB2_HOST2_DP signal is not activated on the hardware. Pin-28 can be configured in software for functions such as GPIO4_B3 (see 40-Pin Pinout), and the USB2_HOST2_DM signal is also not activated on the hardware. To change these pins to USB functions, please follow the steps below to modify the reserved resistors:
+
+Remove the 0-ohm resistors at R32 and R39.
+Solder 0-ohm resistors at R45 and R46.
+### tip
+The schematic and resistor locations can be viewed and downloaded from the hardware documentation.Hardware Documentation Download
+
+[Operation Note]
+This procedure requires soldering skills, and it is recommended that it be performed by an experienced technician.
+
+### USB C
+There are two USB TYPE-C ports, one is USB 2.0 OTG port and the other is USB3.0 HOST port. The power supply is USB 2.0 OTG port.
+
+
 Supports
 --------
 
