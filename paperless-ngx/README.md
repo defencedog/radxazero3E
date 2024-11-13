@@ -7,6 +7,8 @@ Install using *sqlite* database to make it less resource hungry. Recall we are u
 >
 > new thread cannot be created...
 
+To remove above errors also try [solution-1](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md#solution-1)
+
 - [paperless-ngx with sqlite](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/Paperless-ngx-sqlite.yaml)
 - [sist2 with less resources](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2_less_resource.yaml)
 
