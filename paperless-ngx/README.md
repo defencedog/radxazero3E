@@ -1,0 +1,31 @@
+# Paperless-ngx for Engineering Books, Notes & LinkedIN articles
+
+## While in CasaOS
+Install using *sqlite* database to make it less resource hungry. Recall we are using RK3566 CPU with 4Gb RAM. I use document indexer *sist2* along with *paperless-ngx* & both are resource-hungry. Thus following x2 `*.yaml` in my case are woring together other following errors happen
+
+> Resource not available...
+>
+> new thread cannot be created...
+
+- [paperless-ngx with sqlite](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/Paperless-ngx-sqlite.yaml)
+- [sist2 with less resources](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2_less_resource.yaml)
+
+If you want to index some directory its better to nudge *sist2* configurations to match [this](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2.yaml) & temporarily disable *paperless-ngx*
+
+## While in Paperless-ngx
+### OCR
+Our purpose is to allow some time to resource-intensive OCR process beforing echoing some error
+> Configuration (side panel) > OCR
+- enable Deskew
+- enable Rotate page
+- In OCR arguments write `{"tesseract_timeout": 180}`
+### Tags
+Our purpose is to assign `uncategorized` tag to all freshly added documents which user afterwards can tag 
+> Tags (side panel) > Create
+- New tag name `uncategorized`
+- enable check *inbox tag*
+### Dashboard Custom View
+In conjunctin with the above
+> Documents (side panel) > Tags (filter `uncategorized`) > View (Save as) > check Dashboard
+>
+> Dashboard (homepae will have all documents user need to classify properly)
