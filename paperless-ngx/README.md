@@ -20,7 +20,7 @@ Our purpose is to allow some time to resource-intensive OCR process before echoi
 > Configuration (side panel) > OCR
 - enable Deskew
 - disable Rotate page
-- In OCR arguments write `{"tesseract_timeout": 180}`
+- In OCR arguments write `{"tesseract_timeout": 180, "jobs": 1}`
 ### Tags
 Our purpose is to assign `uncategorized` tag to all freshly added documents which user afterwards can tag 
 > Tags (side panel) > Create
@@ -31,3 +31,6 @@ In conjunction with the above. Dashboard landing page (homepage) can further be 
 > Documents (side panel) > Tags (filter `uncategorized`) > View (Save as) > check Dashboard
 >
 > Dashboard (side panel) > Homepage will have all documents user need to classify properly
+
+**Tip** 
+If you plan to upload say 10 books about Python programming which share same tags. You can enable check *inbox tag* for those tags. Then upload all documents at once! 
