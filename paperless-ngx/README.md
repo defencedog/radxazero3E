@@ -20,7 +20,7 @@ Our purpose is to allow some time to resource-intensive OCR process before echoi
 > Configuration (side panel) > OCR
 - enable Deskew
 - disable Rotate page
-- In OCR arguments write `{"tesseract_timeout": 180, "jobs": 1}`
+- In OCR arguments write `{"tesseract_timeout": 180, "jobs": 3, "continue_on_soft_render_error": true}` You can use `"jobs": 2` to make it less resource intensive
 ### Tags
 Our purpose is to assign `uncategorized` tag to all freshly added documents which user afterwards can tag 
 > Tags (side panel) > Create
