@@ -95,7 +95,7 @@ guest ok = No #Yes, for Public access
 > smbd --foreground --no-process-group $SMBDOPTIONS (code=exited...
 > 
 Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/etc_samba)
-### OCI / Port-bind Bug CasaS
+### Bug: OCI / Port-bind CasaOS or Resources not available or Cannot start new thread
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
 
 ## Python3
