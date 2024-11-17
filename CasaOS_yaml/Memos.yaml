@@ -1,0 +1,63 @@
+name: memos
+services:
+  memos:
+    cpu_shares: 90
+    command: []
+    container_name: memos
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+        reservations:
+          memory: "67108864"
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/Istanbul
+    hostname: memos
+    image: neosmemo/memos:latest
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/icon.png
+    ports:
+      - target: 5230
+        published: "5230"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/memos/memos
+        target: /var/opt/memos
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  author: usememos Team
+  category: Notes
+  description:
+    en_us: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
+    zh_cn: Memos 是一个轻量级的自托管Memos中心。 开源且永远免费。
+  developer: usememos Team
+  hostname: ""
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/icon.png
+  index: /
+  is_uncontrolled: false
+  main: memos
+  port_map: "5230"
+  scheme: http
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-2.png
+  store_app_id: memos
+  tagline:
+    en_us: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
+    zh_cn: Memos 是一个轻量级的自托管Memos中心。 开源且永远免费。
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/thumbnail.png
+  tips: {}
+  title:
+    custom: ""
+    en_us: Memos
