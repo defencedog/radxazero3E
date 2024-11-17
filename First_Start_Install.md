@@ -36,18 +36,25 @@ To be installed using `sudo armbian-config` > Software > Softy
 - Btop
 - Glances
 - Dozzle
+- NGINX Proxy Manager to get valid SSL certificates [Youtube tutorial](https://www.youtube.com/watch?v=qlcVx-k-02E)
 ### Favourite Docker Apps
 Some CasaOS compatible `yamls` are present [here](https://github.com/defencedog/radxazero3E/tree/main/CasaOS_yaml)
 - Jellyfin (from default CasaOS store its RKMPP support produce better results)
+
 Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/general/administration/hardware-acceleration/rockchip/) Remember to add x4 devices.  `/dev/mali0` is not present on RK3566 also remember to create `99-rk-device-permissions.rules` as written in instructions. In CasaOS `Priveleges` slider should be ON
-- sist2 
-Its an an advance file searcher / indexer. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
+- sist2
+
+Its an an advance file searcher / indexer. Use [sqlite database](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2_less_resource.yaml) & other tweaks for saving resources. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
 - Syncthing
-Its an sunchronisation service to sync multiple locations in multiple devices
-- Calibre
+
+Its an synchronisation service to sync multiple locations in multiple devices
+- ~Calibre~ Not good for notes / full text search; use Paperless-ngx
+
 A library database creator / editor with _full-text search_ [FTS capability](https://calibre-ebook.com/new-in/fifteen)
-- Calibre-Web
+- ~Calibre-Web~ Not good for notes / full text search; use Paperless-ngx
+
 A GUI reader / webUI for library database created by Calibre
+- [Paperless-ngx](https://github.com/defencedog/radxazero3E/tree/main/paperless-ngx) 
 ### Samba sharing with CasaOS
 The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (external USB or memory card) mounted at `/media/sdcard` (use `df -hT` to know mount points) To make it a NAS with name _radxasdcard_
 ```
