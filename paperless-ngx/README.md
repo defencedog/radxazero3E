@@ -20,7 +20,8 @@ Our purpose is to allow some time to resource-intensive OCR process before echoi
 > Configuration (side panel) > OCR
 - enable Deskew
 - disable Rotate page
-- In OCR arguments write `{"invalidate_digital_signatures": true, "tesseract_timeout": 180, "jobs": 2, "continue_on_soft_render_error": true}`
+- In OCR arguments write
+```{"invalidate_digital_signatures": true, "tesseract_timeout": 180, "jobs": 2, "continue_on_soft_render_error": true}```
 ### Tags
 Our purpose is to assign `uncategorized` tag to all freshly added documents which user afterwards can tag 
 > Tags (side panel) > Create
