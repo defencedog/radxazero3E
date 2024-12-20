@@ -38,3 +38,6 @@ In conjunction with the above. Dashboard landing page (homepage) can further be 
 
 **Tip** 
 If you plan to upload say 10 books about Python programming which share same tags. You can enable check *inbox tag* for those tags. Then upload all documents at once! 
+### RAM / Memory optimisations
+> Settings > Use PDF viewer provided by the browser (enable)
+> 
