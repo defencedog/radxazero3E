@@ -28,7 +28,10 @@ nano recoll.conf
 contents of file
 ```
 # search paths
-topdirs = /media/nas_1/UK_Docz/Standards_API /media/nas_1/Unsorted_Books /media/nas_1/UK_Docz/Books
+topdirs = /media/nas_1/UK_Docz/Standards_API  /media/nas_1/UK_Docz/Books
+
+# necessary parameter if running as daemon
+monitordirs = /media/nas_1/UK_Docz/Standards_API  /media/nas_1/UK_Docz/Books
 
 compressedfilemaxkbs = -1
 
@@ -42,9 +45,9 @@ tesseractlang = eng
 #disable multi-threading on arm64
 thrQSizes = -1 -1 -1
 
-#logging
-idxloglevel = 5
-idxlogfilename = stderr
+#logging https://www.recoll.org/faqsandhowtos/logfilesetup.html
+loglevel = 4
+logfilename = stderr
 ```
 After this initiate first command to index data `recollindex -z 2>&1 | tee ~/recollindex.log` [Manpage](https://www.recoll.org/manpages/recollindex.1.html) For incremental indexes use `recollindex -k 2>&1 | tee ~/recollindex.log`
 
@@ -87,4 +90,16 @@ ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 
 
 [Install]
 WantedBy=multi-user.target
+```
+
+## As Daemon Service
+For live monitoring of folder
+```
+cd ~/.config/systemd/user
+cp /usr/share/recoll/examples/recollindex.service . #examples are included in /share/examples
+cat recollindex.service #ensure binary location
+systemctl daemon-reload
+systemctl --user enable recollindex.service
+systemctl --user start recollindex.service
+journalctl -f | grep recoll
 ```
