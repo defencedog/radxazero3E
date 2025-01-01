@@ -1,3 +1,4 @@
+## Setup files
 Latest Recoll `1.4` for `arm64` is not avaialble under Debian. These `.debs` are extracted from official Ubuntu Jammy PPA & offers no dependancy conflicts with Debian Bookworm
 ```
 sudo apt install python-is-python3 python3-waitress -y
@@ -17,6 +18,7 @@ Recoll data extraction from [external programs](https://www.recoll.org/pages/fea
 ```
 sudo apt install -y unrar gir1.2-poppler-0.18 pdftk-java ocrmypdf poppler-utils antiword unrtf python3-chm python3-py7zr djvulibre-bin 
 ```
+## Configurations
 Preparation to start search & create index
 ```
 mkdir ~/.recoll
@@ -46,12 +48,12 @@ idxlogfilename = stderr
 ```
 After this initiate first command to index data `recollindex -z 2>&1 | tee ~/recollindex.log` [Manpage](https://www.recoll.org/manpages/recollindex.1.html) For incremental indexes use `recollindex -k 2>&1 | tee ~/recollindex.log`
 
-Recoll WebUI & CasaOS
+## Recoll WebUI & CasaOS Startup
 ```
 git clone https://framagit.org/medoc92/recollwebui.git #python3 webui
 sudo nano /etc/rc.local
 ```
-contents appended to file
+contents appended to file**
 ```
 su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
 exit 0
@@ -64,3 +66,25 @@ At CasaOs homepage click + at top right _Add external link_
 > Title: Recoll
 > 
 > Icon: https://www.recoll.org/pics/recoll64.png
+>
+
+** Alternatively create a user service via `systemd`
+
+```
+cd ~/.config/systemd/user #create path if doesnt exist
+nano recoll_webui.service
+systemctl --user enable recoll_webui.service
+systemctl --user start recoll_webui.service
+systemctl --user status recoll_webui.service
+```
+File contents _recoll_webui.service_
+```
+[Unit]
+Description=Recoll webUI
+
+[Service]
+ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 9080 -a 192.168.1.6'
+
+[Install]
+WantedBy=multi-user.target
+```
