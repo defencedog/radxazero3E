@@ -118,5 +118,17 @@ RestartSec=60
 
 [Install]
 WantedBy=multi-user.target #in case of error try default.target
-
 ```
+
+## Multithreading & Parallelism
+This official links explains in depth the features that can be used if you have high-end processor like RK3588
+> https://www.recoll.org/usermanual/webhelp/docs/RCL.INDEXING.CONFIG.THREADS.DOCPREP.html
+> https://www.recoll.org/pages/idxthreads/threadingRecoll.html
+
+For my RK3566 at 1.8GHz (can be safely OC to 2.0GHz) following setting have provided a bit parallelism. Edit `.conf` file
+```
+# Using x2 threads parallelism
+thrQSizes = 2 -1 -1
+thrTCounts =  2 1 1
+```
+& then `systemctl --user start recollindex.service`
