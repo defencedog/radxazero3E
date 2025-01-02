@@ -1,5 +1,5 @@
 ## Setup files
-Latest Recoll `1.4` for `arm64` is not avaialble under Debian. These `.debs` are extracted from official Ubuntu Jammy PPA & offers no dependancy conflicts with Debian Bookworm
+Latest Recoll `1.4` for `arm64` is not available under Debian. These `.debs` are extracted from official Ubuntu Jammy PPA & offers no dependancy conflicts with Debian Bookworm
 ```
 sudo apt install python-is-python3 python3-waitress -y
 sudo apt install -s /*.deb # simulate install to know of any error
@@ -97,9 +97,26 @@ For live monitoring of folder
 ```
 cd ~/.config/systemd/user
 cp /usr/share/recoll/examples/recollindex.service . #examples are included in /share/examples
-cat recollindex.service #ensure binary location
+nano recollindex.service #ensure binary location & make some modifications to make it run in nonGUI environment
 systemctl daemon-reload
 systemctl --user enable recollindex.service
 systemctl --user start recollindex.service
-journalctl -f | grep recoll
+journalctl -xef --user-unit recollindex
+```
+File contents _recollindex.service_
+```
+# Contributed by Frank Dana, licensed as Recoll itself
+[Unit]
+Description=Recoll real-time document indexing
+After=network-online.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/recollindex -m -D -x -w 30 -c %h/.recoll/
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+
 ```
