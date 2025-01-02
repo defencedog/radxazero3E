@@ -113,7 +113,7 @@ After=network-online.target
 [Service]
 Type=exec
 ExecStart=/usr/bin/recollindex -m -D -x -w 30 -c %h/.recoll/
-Restart=on-failure
+Restart=on-failure #better try -> always
 RestartSec=60
 
 [Install]
