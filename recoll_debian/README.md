@@ -89,7 +89,7 @@ Description=Recoll webUI
 ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 9080 -a 192.168.1.6'
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target #in case of error try default.target
 ```
 
 ## As Daemon Service
@@ -117,6 +117,6 @@ Restart=on-failure
 RestartSec=60
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target #in case of error try default.target
 
 ```
