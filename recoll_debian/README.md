@@ -131,4 +131,4 @@ For my RK3566 at 1.8GHz (can be safely OC to 2.0GHz) following setting have prov
 thrQSizes = 2 -1 -1
 thrTCounts =  2 1 1
 ```
-& then `systemctl --user start recollindex.service`
+& then `systemctl --user restart recollindex.service`
