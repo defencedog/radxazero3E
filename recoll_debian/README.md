@@ -124,7 +124,7 @@ This official links explains in depth the features that can be used if you have 
 > https://www.recoll.org/usermanual/webhelp/docs/RCL.INDEXING.CONFIG.THREADS.DOCPREP.html
 > https://www.recoll.org/pages/idxthreads/threadingRecoll.html
 
-For my RK3566 at 1.8GHz (can be safely OC to 2.0GHz) following setting have provided a bit parallelism. Edit `.conf` file
+For my RK3566 at 1.8GHz (can be [safely overclocked](https://github.com/defencedog/radxazero3E/tree/main/dtb_dtbo/overclocked) to 2.0GHz) following setting have provided a bit parallelism. Edit `.conf` file
 ```
 # Using x2 threads parallelism
 thrQSizes = 2 -1 -1
