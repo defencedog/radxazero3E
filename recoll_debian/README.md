@@ -77,7 +77,7 @@ File contents _recollwebui.service_
 Description=Recoll webUI
 
 [Service]
-ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 9080 -a 192.168.1.6'
+ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>'
 
 [Install]
 WantedBy=default.target
