@@ -89,7 +89,7 @@ Description=Recoll webUI
 ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 9080 -a 192.168.1.6'
 
 [Install]
-WantedBy=multi-user.target #in case of error try default.target
+WantedBy=default.target
 ```
 
 ## As Daemon Service
@@ -101,7 +101,7 @@ nano recollindex.service #ensure binary location & make some modifications to ma
 systemctl daemon-reload
 systemctl --user enable recollindex.service
 systemctl --user start recollindex.service
-journalctl -xef --user-unit recollindex
+journalctl -f --user-unit recollindex
 ```
 File contents _recollindex.service_
 ```
@@ -117,7 +117,7 @@ Restart=on-failure #better try -> always
 RestartSec=60
 
 [Install]
-WantedBy=multi-user.target #in case of error try default.target
+WantedBy=default.target
 ```
 
 ## Multithreading & Parallelism
