@@ -52,35 +52,26 @@ logfilename = stderr
 After this initiate first command to index data `recollindex -z 2>&1 | tee ~/recollindex.log` [Manpage](https://www.recoll.org/manpages/recollindex.1.html) For incremental indexes use `recollindex -k 2>&1 | tee ~/recollindex.log`
 
 ## Recoll WebUI & CasaOS Startup
+**Note webUI will run only if valid index exists before**
 ```
 git clone https://framagit.org/medoc92/recollwebui.git #python3 webui
-sudo nano /etc/rc.local
 ```
-contents appended to file**
+contents appended to `sudo nano /etc/rc.local` **
 ```
 su <user> -c 'cd /home/<user>/recollwebui && ./webui-standalone.py -p 9080 -a <host ip>' 
 exit 0
 ```
-**Note webUI will run only if valid index exists before**
-
-At CasaOs homepage click + at top right _Add external link_
-> Link: http://hostip:9080
-> 
-> Title: Recoll
-> 
-> Icon: https://www.recoll.org/pics/recoll64.png
->
 
 ** Alternatively create a user service via `systemd`
 
 ```
-cd ~/.config/systemd/user #create path if doesnt exist
-nano recoll_webui.service
-systemctl --user enable recoll_webui.service
-systemctl --user start recoll_webui.service
-systemctl --user status recoll_webui.service
+cd ~/.config/systemd/user #create path if doesn't exist
+nano recollwebui.service
+systemctl --user enable recollwebui.service
+systemctl --user start recollwebui.service
+systemctl --user status recollwebui.service
 ```
-File contents _recoll_webui.service_
+File contents _recollwebui.service_
 ```
 [Unit]
 Description=Recoll webUI
@@ -91,6 +82,14 @@ ExecStart=/bin/bash -c 'cd /home/<USER>/recollwebui && ./webui-standalone.py -p 
 [Install]
 WantedBy=default.target
 ```
+
+At CasaOs homepage click + at top right _Add external link_
+> Link: http://hostip:9080
+> 
+> Title: Recoll
+> 
+> Icon: https://www.recoll.org/pics/recoll64.png
+>
 
 ## As Daemon Service
 For live monitoring of folder
