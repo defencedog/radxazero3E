@@ -4,7 +4,7 @@ I have [overclocked](https://github.com/defencedog/radxazero3E/tree/main/dtb_dtb
 2. power my twin fan using hub NOT GPIO terminals (details below)
 3. attaching multiple hardisks
 4. attaching external sdcard for extracting / organising camera pictures
-5. & BT dongle to it
+5. & BT / WIFI dongle to it; I dont use WIFI however
 
 <img src="RSHTech.png" width="500" />
 
