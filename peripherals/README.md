@@ -153,4 +153,4 @@ ukhan@radxa-zero3:~$ pacmd list-sinks
 ukhan@radxa-zero3:~$ 
 
 ```
-How to use `cmus` as audio player is [detailed here](https://linux.die.net/man/7/cmus-tutorial)
+How to use `cmus` as audio player is [detailed here]([https://linux.die.net/man/7/cmus-tutorial](https://www.ditig.com/publications/cmus-cheat-sheet))
