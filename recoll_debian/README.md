@@ -119,6 +119,14 @@ RestartSec=60
 WantedBy=default.target
 ```
 
+## Recoll & Remote access via Twingate
+It must be notes that because the above services are _user_ based so to access webUI you need to first login or `ssh` as that particular user otherwise webUI will be not be invoked. To solve this use
+```
+sudo loginctl enable-linger <user>
+loginctl list-users #to verify functionality
+```
+Now _<user>_ will be autologged at any boot
+
 ## Multithreading & Parallelism
 This official links explains in depth the features that can be used if you have high-end processor like RK3588
 > https://www.recoll.org/usermanual/webhelp/docs/RCL.INDEXING.CONFIG.THREADS.DOCPREP.html
