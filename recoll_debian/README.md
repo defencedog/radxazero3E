@@ -139,3 +139,13 @@ thrQSizes = 2 -1 -1
 thrTCounts =  2 1 1
 ```
 & then `systemctl --user restart recollindex.service`
+
+## WebUI Browser Experience
+To have streaming pdf experience such that browser always open pdf in built-in _PDFViewer.js_ better to install following plugin, available both in Chromium & Firefox based browsers
+> https://chromewebstore.google.com/detail/no-pdf-download/ikhahkidgnljlniknmendeflkdlfhonj
+>
+> https://addons.mozilla.org/en-US/firefox/addon/no-pdf-download/
+> 
+This PDF viewer extension (made by Mozzila) available in Chrome provides editing & annotating features as well
+
+> https://chromewebstore.google.com/detail/pdf-reader/ieepebpjnkhaiioojkepfniodjmjjihl
