@@ -130,6 +130,7 @@ Now _<user>_ will be autologged at any boot
 ## Multithreading & Parallelism
 This official links explains in depth the features that can be used if you have high-end processor like RK3588
 > https://www.recoll.org/usermanual/webhelp/docs/RCL.INDEXING.CONFIG.THREADS.DOCPREP.html
+> 
 > https://www.recoll.org/pages/idxthreads/threadingRecoll.html
 
 For my RK3566 at 1.8GHz (can be [safely overclocked](https://github.com/defencedog/radxazero3E/tree/main/dtb_dtbo/overclocked) to 2.0GHz). Following setting have provided a bit parallelism. Edit `.conf` file
@@ -141,7 +142,9 @@ thrTCounts =  2 1 1
 & then `systemctl --user restart recollindex.service`
 
 ## WebUI Browser Experience
-To have streaming pdf experience such that browser always open pdf in built-in _PDFViewer.js_ better to install following plugin, available both in Chromium & Firefox based browsers
+**Skip enabling _Local File Access_ features in browser; its a hassle & not needed!**
+
+Click on the **main title** of file in search results; to have streaming pdf experience such that browser always open pdf in built-in _PDFViewer.js_ better to install following plugin, available both in Chromium & Firefox based browsers. 
 > https://chromewebstore.google.com/detail/no-pdf-download/ikhahkidgnljlniknmendeflkdlfhonj
 >
 > https://addons.mozilla.org/en-US/firefox/addon/no-pdf-download/
