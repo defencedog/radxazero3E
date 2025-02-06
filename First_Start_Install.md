@@ -13,7 +13,7 @@ sudo apt install -y 7zip mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-
 Instructions [in this repo](https://github.com/defencedog/radxazero3E/tree/main/recoll_debian)
 ## Install ripgrepall
 Pre-compiled binaries [in this repo](https://github.com/defencedog/orangepi3b_v2.1/tree/main/files_tools/ripgrep-all)
-## Replave `mv` & `cp` bash commands
+## Replace `mv` & `cp` bash commands
 > https://github.com/defencedog/orangepi3b_v2.1/tree/main/files_tools/advcpmv
 ## CasaOS
 ### Install
