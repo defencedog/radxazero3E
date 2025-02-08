@@ -36,8 +36,19 @@ In conjunction with the above. Dashboard landing page (homepage) can further be 
 >
 > Dashboard (side panel) > Homepage will have all documents user need to classify properly
 
+### Complex Tags with regex
+To create a tag with OR AND consider this code `((.*ejector)|(.*eductor))(.*vacuum)` This will tag any document having _ejector_ `OR` _eductor_ `AND` vacuum (do check _case-insensitive option_ while creating this tag). 
+
+Result from actual logs
+> Tag ejector matched on document 2025-02-08 air_ejector_selection because the string resulted. The Steam Jet Ejector makes up a major part of the total vacuum matches the regular expression ((.*ejector)|(.*eductor))(.*vacuum)
+>
+> Use https://regex101.com/
+
 **Tip** 
 If you plan to upload say 10 books about Python programming which share same tags. You can enable check *inbox tag* for those tags. Then upload all documents at once! 
 ### RAM / Memory optimisations
 > Settings > Use PDF viewer provided by the browser (enable)
+>
+> Settings > Items per page (25)
 > 
+> Read https://docs.paperless-ngx.com/setup/#less-powerful-devices
