@@ -107,6 +107,17 @@ Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/def
 ### Bug: OCI / Port-bind CasaOS or Resources not available or Cannot start new thread
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
 
+### CLI Monitoring tools for containers
+1] watch -n 1 'docker stats --no-stream | sort -k 4 -h -r | head -10'
+2] `ctop`
+```
+echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list
+sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
+sudo apt update
+sudo apt install docker-ctop
+```
+> https://packages.azlux.fr/
+
 ## Python3
 First install `sudo apt install python3-pip` then install packages **without root** like `pip install plotext psutil jupyter numpy sympy coolprop --break-system-packages` This will create a new _environment_ or a _directory_ that has all python executables & libraries. Afterwards restart terminal or _ssh session_. In terminal `echo $PATH` if output shows `/home/ukhan/.local/bin` following step is not required
 ### Optional Step
