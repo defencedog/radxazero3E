@@ -115,6 +115,8 @@ echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packa
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 sudo apt update
 sudo apt install docker-ctop
+sudo ctop -a -s mem #active containers only sorted by memory%
+sudo ctop -a -s cpu #active containers only sorted by cpu%
 ```
 > https://packages.azlux.fr/
 
