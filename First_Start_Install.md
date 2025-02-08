@@ -108,8 +108,8 @@ Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/def
 Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
 
 ### CLI Monitoring tools for containers
-1] watch -n 1 'docker stats --no-stream | sort -k 4 -h -r | head -10'
-2] `ctop`
+- `watch -n 1 'docker stats --no-stream | sort -k 4 -h -r | head -10'`
+- `ctop`
 ```
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
