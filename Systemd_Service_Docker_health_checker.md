@@ -23,7 +23,7 @@ for container_id in $container_id_list; do
 done
 ```
 ## Timer Script
-> https://stackoverflow.com/a/50539088/1162750
+> https://unix.stackexchange.com/a/294200/29032
 > 
 > https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html
 ```
@@ -36,9 +36,9 @@ _ukhan_docker.timer_
 Description=UKhan Docker Recurrence Checker
 
 [Timer]
-OnStartupSec=120
-OnCalendar=*-*-* *:*:05
-# After boot delay 120sec & restart .service after every 5min
+OnBootSec=3min
+OnUnitActiveSec=5min
+#  unit started 3 minutes after boot and then every 5 minutes after that first time
 
 [Install]
 WantedBy=timers.target
@@ -68,5 +68,7 @@ systemctl daemon-reload
 systemctl enable ukhan_docker.timer
 systemctl start ukhan_docker.timer
 systemctl status ukhan_docker.timer #will show timer name
+journalctl -f --unit ukhan_docker.timer
 systemctl status ukhan_docker.service #will show service proper start / exit
+journalctl -f --unit ukhan_docker.service
 ```
