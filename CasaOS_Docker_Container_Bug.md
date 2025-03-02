@@ -20,7 +20,7 @@ kernel.threads-max = 2055 # at EOF
 ```
 I got this value from Armbian `noble` image running on same CPU RK3566 on OPi3b v2.1. Reboot afterwards
 ## Solution 2
-Finally I used some old debian packages. It must be noted in official [Docker documentation](https://docs.docker.com/engine/install/ubuntu/) these legacy packages are meant to be removed but in my case I have to reinstall these! Issued the following command & it skipped some packages but did install some other legacy packages. After this my existing CasaOS containers were completely removed. I installed new ones with no error
+Finally I used some old debian packages. It must be noted in official [Docker documentation](https://docs.docker.com/engine/install/ubuntu/) these legacy packages are meant to be removed but in my case I have to reinstall these! Issued the following command & it skipped some packages but did install some other legacy packages. **After this my existing CasaOS containers were completely removed.** I installed new ones with no error
 ```
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc golang-github-containernetworking-plugin-dnsname; do sudo apt-get reinstall $pkg; done
 ```
