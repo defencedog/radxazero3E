@@ -69,6 +69,7 @@ systemctl daemon-reload
 systemctl enable ukhan_docker.timer
 systemctl start ukhan_docker.timer
 systemctl status ukhan_docker.timer #will show timer name
+systemctl list-timers
 journalctl -f --unit ukhan_docker.timer
 systemctl status ukhan_docker.service #will show service proper start / exit
 journalctl -f --unit ukhan_docker.service
