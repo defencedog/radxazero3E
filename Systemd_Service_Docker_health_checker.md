@@ -19,7 +19,7 @@ for container_id in $container_id_list; do
     # Set result based on exit code
     [[ $? -eq 0 ]] && result="SUCCESS" || result="FAILED"
     echo "Restart of container ${container_id} - ${result}"
-    sleep 30
+    sleep 60
 done
 ```
 ## Timer Script
@@ -37,8 +37,8 @@ Description=UKhan Docker Recurrence Checker
 
 [Timer]
 OnBootSec=3min
-OnUnitActiveSec=5min
-#  unit started 3 minutes after boot and then every 5 minutes after that first time
+OnUnitActiveSec=15min
+#  unit started 3 minutes after boot and then every 15 minutes after that first time
 
 [Install]
 WantedBy=timers.target
@@ -57,6 +57,7 @@ After = network.target
 [Service]
 Type=exec
 ExecStart=/etc/systemd/system/ukhan_docker.sh
+TimeoutStartSec=600 #assuming you have x10 containers
 
 [Install]
 WantedBy=default.target
