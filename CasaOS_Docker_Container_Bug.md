@@ -1,4 +1,4 @@
-# OCI_Runtime | Proxy Binding Error while installing containers in CasaOS
+# `OCI runtime` | `crun` errors while installing containers in CasaOS
 
 ## Bug
 This bug I observed in all Armbian variants Ubuntu Jammy, Noble & Debian Bookworm
