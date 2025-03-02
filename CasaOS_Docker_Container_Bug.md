@@ -32,6 +32,23 @@ sudo apt-mark hold docker-* python3-compose* python3-docker* runc crun podman* c
 To view previous held packages `apt-mark showhold`
 To un-hold held packages `sudo apt-mark unhold $(apt-mark showhold)`
 
+## Solution 3
+I recently updated Casa-OS after about x6 months of stable system run. Again this `OCI-runtime` / `crun` errors are happening. Considering same `podman` version as well as same Ubuntu `Noble` release it seems others also have this issue
+
+> https://askubuntu.com/questions/1517387/container-is-stuck-in-state-stopping-cannot-clear-it
+
+I have installed a great docker management CLI utility `ctop` by running `sudo ctop -a` it showed me all containers managed by `podman` but it was **incomplete** list. This helped me but I didnt want to loose by containers & respective data
+
+> https://unix.stackexchange.com/a/739025/29032
+
+So I issued in the terminal (but **didn't press yes**) `sudo podman system reset` & it showed x2 old containers that were invisible in Casa-OS webui, `ctop` or `podman ps -a`! I removed those x2 entries one by one via `sudo podman rm <container_id>` & reboot system. Everything stable for now.
+
+## Startup of containers at Boot
+
+Skip this section; preferable solution here
+
+> https://github.com/defencedog/radxazero3E/blob/main/Systemd_Service_Docker_health_checker.md
+
 Because of SBC's reduced RAM or weak CPU complex containers may not properly initiate at a reboot. So one can check status of each container & restart it if it is not healthy. To auto-check it [at boot time](https://askubuntu.com/a/335253/110979):
 ```
 sudo nano /etc/init.d/ukhan_docker
