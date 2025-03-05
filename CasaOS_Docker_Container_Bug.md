@@ -43,9 +43,7 @@ I have installed a great docker management CLI utility `ctop` by running `sudo c
 
 So I issued in the terminal (but **didn't press yes**) `sudo podman system reset` & it showed x2 old containers that were invisible in Casa-OS webui, `ctop` or `podman ps -a`! I removed those x2 entries one by one via `sudo podman rm <container_id>` & reboot system. Everything stable for now.
 
-## Startup of containers at Boot
-
-Solution here
+The other issue I discovered relates to `systemd` & startup of containers at boot. This is dicsussed here:
 
 > https://github.com/defencedog/radxazero3E/blob/main/Systemd_Service_Docker_health_checker.md
 
