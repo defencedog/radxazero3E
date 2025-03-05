@@ -2,6 +2,8 @@
 
 **First x2 methods of invoking podman are deprecated & must not be used. I have observed `out  of memory` errors & containers stuck in `Stopping` conditions if `systemd` or `init.d` services are involved** 
 
+I am using `podman version 4.9.3`
+
 > https://github.com/containers/podman/issues/24268
 >
 > Officially deprecated `podman generate systemd` as referenced here https://www.tutorialworks.com/podman-systemd/
