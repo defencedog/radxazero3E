@@ -1,0 +1,61 @@
+name: xenodochial_mordy
+services:
+  pigallery2:
+    cpu_shares: 90
+    command: []
+    container_name: pigallery2
+    deploy:
+      resources:
+        limits:
+          memory: 3732M
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/dma_heap:/dev/dma_heap
+      - /dev/mpp_service:/dev/mpp_service
+      - /dev/rga:/dev/rga
+    environment:
+      - NODE_ENV=production
+    hostname: pigallery2
+    image: bpatrik/pigallery2:latest
+    labels:
+      icon: https://bpatrik.github.io/pigallery2/assets/icon_inv.png
+    ports:
+      - target: 80
+        published: "3000"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pigallery2/config
+        target: /app/data/config
+      - type: bind
+        source: /media/nas_2/img_gallery
+        target: /app/data/images
+      - type: bind
+        source: /media/nas_2/tmp
+        target: /app/data/tmp
+      - type: bind
+        source: /usr/bin/ffmpeg
+        target: /bin/ffmpeg
+      - type: bind
+        source: /usr/bin/ffprobe
+        target: /bin/ffprobe
+      - type: bind
+        source: /usr/bin/ffplay
+        target: /bin/ffplay
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://bpatrik.github.io/pigallery2/assets/icon_inv.png
+  index: /
+  is_uncontrolled: false
+  port_map: "3000"
+  scheme: http
+  store_app_id: xenodochial_mordy
+  title:
+    custom: pigallery2
+    en_us: pigallery2
