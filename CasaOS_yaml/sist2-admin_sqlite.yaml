@@ -1,0 +1,51 @@
+name: awesome_alden
+services:
+  sist2-admin:
+    cpu_shares: 90
+    command:
+      - /root/sist2-admin/sist2_admin/app.py
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+    entrypoint:
+      - python3
+    image: sist2app/sist2:arm64-linux
+    labels:
+      icon: https://avatars.githubusercontent.com/u/194617242?s=48&v=4
+    ports:
+      - target: 4090
+        published: "4090"
+        protocol: tcp
+      - target: 8080
+        published: "4080"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/sist2-admin-data/
+        target: /sist2-admin
+      - type: bind
+        source: /media/
+        target: /host
+    working_dir: /root/sist2-admin/
+    devices: []
+    cap_add: []
+    environment: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://avatars.githubusercontent.com/u/194617242?s=48&v=4
+  index: /
+  is_uncontrolled: false
+  port_map: "4080"
+  scheme: http
+  store_app_id: awesome_alden
+  title:
+    custom: ""
+    en_us: sist2-admin
