@@ -44,7 +44,7 @@ Consistency Policy : bitmap
        -       0        0        0      removed
        1       8       16        1      active sync   /dev/sdb
 ```
-==Degraded state== & one hardisk is not detected or powered off
+**Degraded state** & one hardisk is not detected or powered off
 ### Troubleshooting
 `cockpit` webui can also tell you these stuff. The device /dev/sda` seems to be problematic or the USB port is faulty. Test these x2 possibilities via using`sda` on another computer. Another USB or peripheral can be inserted into suspected USB port; use `lsusb` to check if its detected
 ### Solution
