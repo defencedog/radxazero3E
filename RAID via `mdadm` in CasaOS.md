@@ -1,7 +1,7 @@
 This [youtube video](https://www.youtube.com/watch?v=ktfAQ363NmY) by *TECHNiCKR Global* is perhaps the most straightfoward solution to install `cockpit` alongside CasaOS. Cockpit then will be used to create & manage RAID arrays. I only use RAID1 (mirroring)
 
 ## The Bug in Cockpit
-One of the Cockpit module is using [too much resources](https://askubuntu.com/questions/1399191/pmproxy-using-100-cpu) & perhaps not suitable for SBC environment. Remove it `sudo apt remove --purpe cockpit-pcp pcp`
+One of the Cockpit module is using [too much resources](https://askubuntu.com/questions/1399191/pmproxy-using-100-cpu) & perhaps not suitable for SBC environment. Remove x2 packages `sudo apt remove --purge cockpit-pcp pcp`
 
 ## `mdadm` Management
 Check for `mdadm` devices names & RAID type
