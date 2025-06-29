@@ -60,4 +60,4 @@ Array stopping didn't work even though array was properly unmounted. I tried dis
 - https://superuser.com/questions/471327/how-to-force-mdadm-to-stop-raid5-array
 ### Resources
 - https://www.thomas-krenn.com/en/wiki/Mdadm_recovery_and_resync
-#storage #linux
+
