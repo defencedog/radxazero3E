@@ -1,0 +1,40 @@
+name: yourprojectname
+services:
+  iqbit:
+    cpu_shares: 90
+    command: []
+    container_name: iqbit
+    deploy:
+      resources:
+        limits:
+          memory: 7826M
+    environment:
+      - QBIT_HOST=http://192.168.1.6:8181
+      - STANDALONE_SERVER_PORT=8181
+    hostname: iqbit
+    image: bigowen/iqbit:latest
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png
+    ports:
+      - target: 8081
+        published: "8081"
+        protocol: tcp
+    restart: always
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png
+  index: /
+  is_uncontrolled: false
+  port_map: "8081"
+  scheme: http
+  store_app_id: yourprojectname
+  title:
+    custom: ""
+    en_us: iqbit

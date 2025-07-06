@@ -1,0 +1,44 @@
+name: peaceful_james
+services:
+  dockeremule:
+    cpu_shares: 90
+    command: []
+    container_name: emule-web
+    deploy:
+      resources:
+        limits:
+          memory: 7826M
+    hostname: emule-web
+    image: seancheung/dockeremule:web
+    labels:
+      icon: https://cdn2.iconfinder.com/data/icons/isuite/512/eMule.png
+    ports:
+      - target: 4711
+        published: "4711"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /media/emule/incoming
+        target: /emule/Incoming
+      - type: bind
+        source: /media/emule/temp
+        target: /emule/Temp
+    devices: []
+    cap_add: []
+    environment: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn2.iconfinder.com/data/icons/isuite/512/eMule.png
+  index: /
+  is_uncontrolled: false
+  port_map: "4711"
+  scheme: http
+  store_app_id: peaceful_james
+  title:
+    custom: ""
+    en_us: dockeremule
