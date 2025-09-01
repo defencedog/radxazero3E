@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /media/tronsmart/metube
+        source: /media/metube
         target: /downloads
     devices: []
     cap_add: []
