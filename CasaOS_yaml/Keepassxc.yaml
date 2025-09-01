@@ -1,0 +1,70 @@
+name: linuxserver-keepassxc
+services:
+  app:
+    cpu_shares: 90
+    container_name: keepassxc
+    deploy:
+      resources:
+        limits:
+          memory: 7826M
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      - CUSTOM_USER=ukhan
+      - DISABLE_IPV6=true
+      - DRINODE=/dev/dri/renderD128
+      - NO_DECOR=true
+      - PASSWORD=Muqadma#700
+      - PGID=1000
+      - PUID=1000
+      - TITLE=ukhan Vault
+      - TZ=Asia/Istanbul
+    image: linuxserver/keepassxc:2.7.10
+    labels:
+      icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/keepassxc-logo.png
+    ports:
+      - target: 3000
+        published: "4000"
+        protocol: tcp
+      - target: 3001
+        published: "4001"
+        protocol: tcp
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/keepassxc/config
+        target: /config
+    cap_add: []
+    command: []
+    networks:
+      - default
+    hostname: keepassxc
+networks:
+  default:
+    name: linuxserver-keepassxc_default
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  author: WisdomSky
+  category: LinuxServer.io
+  description:
+    en_us: KeePassXC is a free and open-source password manager. It started as a
+      community fork of KeePassX (itself a cross-platform port of KeePass).
+  developer: LinuxServer.io
+  hostname: ""
+  icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/keepassxc-logo.png
+  index: /
+  is_uncontrolled: false
+  main: app
+  port_map: "4000"
+  scheme: http
+  store_app_id: linuxserver-keepassxc
+  tagline:
+    en_us: A free and open-source password manager. It started as a community fork
+      of KeePassX (itself a cross-platform port of KeePass).
+  thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/keepassxc-logo.png
+  title:
+    custom: ""
+    en_us: Keepassxc
