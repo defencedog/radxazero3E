@@ -14,7 +14,7 @@ services:
       - DISABLE_IPV6=true
       - DRINODE=/dev/dri/renderD128
       - NO_DECOR=true
-      - PASSWORD=Muqadma#700
+      - PASSWORD=***
       - PGID=1000
       - PUID=1000
       - TITLE=ukhan Vault
