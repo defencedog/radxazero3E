@@ -1,0 +1,42 @@
+name: successful_davide
+services:
+  metube:
+    cpu_shares: 90
+    command: []
+    container_name: metube
+    deploy:
+      resources:
+        limits:
+          memory: 7826M
+    environment:
+      - DEFAULT_THEME=dark
+    hostname: metube
+    image: ghcr.io/alexta69/metube:latest
+    labels:
+      icon: https://cdn-icons-png.flaticon.com/128/174/174883.png
+    ports:
+      - target: 8081
+        published: "8071"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /media/tronsmart/metube
+        target: /downloads
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn-icons-png.flaticon.com/128/174/174883.png
+  index: /
+  is_uncontrolled: false
+  port_map: "8071"
+  scheme: http
+  store_app_id: successful_davide
+  title:
+    custom: ""
+    en_us: metube
