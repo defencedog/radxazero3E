@@ -56,7 +56,7 @@ In my case it was *immich-db-backup-1757124000053.sql.gz* Now restore it
 ```
 gunzip --stdout "~/.local/share/containers/immich/backup/immich-db-backup-1757124000053.sql.gz" \
 | sed "s/SELECT pg_catalog.set_config('search_path', '', false);/SELECT pg_catalog.set_config('search_path', 'public, pg_catalog', true);/g" \
-| docker exec -i immich_postgres psql --dbname=postgres --username=<DB_USERNAME>  # Restore Backup
+| docker exec -i immich_postgres psql --dbname=postgres --username=postgres  # Restore Backup
 docker compose up -d            # Start remainder of Immich apps
 ```
 ## Bonus
