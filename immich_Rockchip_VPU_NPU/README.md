@@ -23,10 +23,22 @@ Terminal: /dev/pts/0
 CPU: (4) @ 1.800GHz
 Memory: 1207MiB / 3724MiB
 ```
+## Important Notes
+immich webUI needs to run in *https* protocol so either you have to setup cloudflare tunnel & *buy* a public domain or you setup NGinx Proxy with a free registered ssl certificate from *DuckDNS* + Twingate / Tailscale combo
+- https://www.youtube.com/watch?v=Dm5MyuUdq2s
+- https://www.youtube.com/watch?v=qlcVx-k-02E (best tutorial)
 ## Install docker
 Install docker `sudo apt install docker-ce docker-ce-cli docker-compose containerd.io docker-compose-plugin` if you want to install very latest version not available in default repos [follow this](https://gist.github.com/serafdev/2914392a6c0a3650cd4b047909544ce7)
 ## Container location
-I arbitrarily choose *~/.local/share/containers*
+### New install on Radxa3E
+Because I am running CasaOS better choose this location */DATA/AppData/immich*. Place the attached x3 *.yaml* & x1 *.env* file in it & issue 
+```
+sudo apt install ocl-icd-libopencl1 clinfo ./libmali-bifrost-g52-g13p0-dummy-wayland-gbm_1.9-1_arm64.deb
+sudo docker compose -f docker-compose.yml up -d
+```
+& thats it!
+### Migrating to OPi3b
+I arbitrarily choose *~/.local/share/containers* on OPi3b
 `cd ~/.local/share/containers && mkdir immich && cd immich` Open a separate terminal to ssh to Radxa3E to get folder locations. Get *library* folder from Radxa3E to new OPi3b do not copy *postgres* folder `scp ukhan@192.168.1.55:/DATA/AppData/immich/library .` Now you must have *~/.local/share/containers/immich/library* Use `du -sh` on both machines to check folder size to know everything is in sync
 ## Important HWaccel Variables
 Place the attached x3 *.yaml* & x1 *.env* file in  *~/.local/share/containers/immich*
