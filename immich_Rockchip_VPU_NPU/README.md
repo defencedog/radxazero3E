@@ -1,4 +1,4 @@
-# Immich Migration to New Instance
+# Immich Migration & or New Setup for RK3566
 My source machine & destination machine has same Armbian OS except the former is *headless* & not overclocked to 2GHz 
 ```
 OS: Armbian 25.5.2 noble aarch64
