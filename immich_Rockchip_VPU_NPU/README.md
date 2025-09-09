@@ -23,7 +23,7 @@ Terminal: /dev/pts/0
 CPU: (4) @ 1.800GHz
 Memory: 1207MiB / 3724MiB
 ```
-## From Radxa 3E to OPi3b (both RK3566)
+## Install docker
 Install docker `sudo apt install docker-ce docker-ce-cli docker-compose containerd.io docker-compose-plugin` if you want to install very latest version not available in default repos [follow this](https://gist.github.com/serafdev/2914392a6c0a3650cd4b047909544ce7)
 ## Container location
 I arbitrarily choose *~/.local/share/containers*
