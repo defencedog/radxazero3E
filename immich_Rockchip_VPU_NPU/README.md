@@ -41,7 +41,7 @@ sudo docker compose -f docker-compose.yml up -d
 I arbitrarily choose *~/.local/share/containers* on OPi3b
 `cd ~/.local/share/containers && mkdir immich && cd immich` Open a separate terminal to ssh to Radxa3E to get folder locations. Get *library* folder from Radxa3E to new OPi3b do not copy *postgres* folder `scp ukhan@192.168.1.55:/DATA/AppData/immich/library .` Now you must have *~/.local/share/containers/immich/library* Use `du -sh` on both machines to check folder size to know everything is in sync
 ## Important HWaccel Variables
-Place the attached x3 *.yaml* & x1 *.env* file in  *~/.local/share/containers/immich*
+Place the attached x3 *.yaml* & x1 *.env* file in  *~/.local/share/containers/immich* **Be cautious** *.env* file will appear hidden by default! Use `ls -a`
 
 In the *.env* file db password & username are kept default which makes standardise immich migration among different machines also the data & db location folders are kept within immich parent folder
 
@@ -49,7 +49,9 @@ The RKNPU is activated by an overlay which is not discussed here however Armbian
 
 In **headless** machine you can install vendor *libmali* via install `libmali-bifrost-g52-g13p0-dummy-wayland-gbm_1.9-1_arm64.deb` however don't do it if running GNOME it will break wayland! So in OPI3b I have to comment out `/usr/lib/aarch64-linux-gnu/libmali.so.1:/usr/lib/aarch64-linux-gnu/libmali.so.1:ro` in *hwaccel.transcoding.yml* 
 
-To utilise OpenCl do `sudo apt install clinfo ocl-icd-libopencl1` It will give you a file `mesa.icd` in */etc/OpenCL/vendors* & on *headless* you can get `mali.icd` because I installed [libmali-bifrost-g52-g13p0-dummy-wayland-gbm_1.9-1_arm64.deb](https://github.com/tsukumijima/libmali-rockchip/releases) In [kisak-mesa ppa](https://launchpad.net/~kisak/+archive/ubuntu/turtle/?field.series_filter=noble) one can also install `mesa-opencl-icd` I have not tested it. The **headless** environment i.e `mali.icd` exposes more hardware capabilities so better setup immich in *headless* environment. This statement can be verified by running `clinfo` & comparing terminal output
+To utilise OpenCl do `sudo apt install clinfo ocl-icd-libopencl1` It will give you a file `mesa.icd` in */etc/OpenCL/vendors* & on *headless* you can get `mali.icd` because I installed [libmali-bifrost-g52-g13p0-dummy-wayland-gbm_1.9-1_arm64.deb](https://github.com/tsukumijima/libmali-rockchip/releases) 
+
+In [kisak-mesa ppa](https://launchpad.net/~kisak/+archive/ubuntu/turtle/?field.series_filter=noble) one can also install `mesa-opencl-icd` I have not tested it. The **headless** environment i.e `mali.icd` exposes more hardware capabilities so better setup immich in *headless* environment. This statement can be verified by running `clinfo` & comparing terminal output
 For details check **RKMPP** subsection in [official docs](https://immich.app/docs/features/hardware-transcoding/)
 ## Initiating Containers & Migration
 After you have placed all compose / environment files & copied *library* folder
