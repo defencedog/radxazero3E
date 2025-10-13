@@ -10,9 +10,9 @@ The other alternative is that I use x2 separate `sudo` one liners first for `gpi
 Check attachment. Simulated via Proto on Android. Check LED module documentation for **maximum amperage** & select base resistor R1 accordingly. For mine it was 20-30mA.
 In simulation you can observe when GPIO is on (simulated via switch) LED I (current) is ~20mA
 
-![Physical GPIO]([image_url](https://i.imgur.com/P72a2eA.jpeg))
+![Physical GPIO](https://i.imgur.com/P72a2eA.jpeg)
 
-![PROTO simulation]([image_url](https://i.imgur.com/hGTNgh4.jpeg))
+![PROTO simulation](https://i.imgur.com/hGTNgh4.jpeg)
 
 ## Software solution
 ```
