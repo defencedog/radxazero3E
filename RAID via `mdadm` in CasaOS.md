@@ -46,7 +46,7 @@ Consistency Policy : bitmap
 ```
 **Degraded state** & one hardisk is not detected or powered off
 ### Troubleshooting
-`cockpit` webui can also tell you these stuff. The device /dev/sda` seems to be problematic or the USB port is faulty. Test these x2 possibilities via using`sda` on another computer. Another USB or peripheral can be inserted into suspected USB port; use `lsusb` to check if its detected
+`cockpit` webui can also tell you these stuff. The device `/dev/sda` seems to be problematic or the USB port is faulty. Test these x2 possibilities via using `sda` on another computer. Another USB or peripheral can be inserted into suspected USB port; use `lsusb` to check if its detected
 ### Solution
 If the `sda` & port are both healthy then simply removing & re-adding the storage to RAID array will do the trick.
 ```
