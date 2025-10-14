@@ -14,7 +14,7 @@ md127 : active raid1 sdb[1]
 ```
 Check health of a particular array
 ```
-$ sudo mdadm --D /dev/md127
+$ sudo mdadm -D /dev/md127
 /dev/md127:
            Version : 1.2
      Creation Time : Tue May 20 22:09:14 2025
