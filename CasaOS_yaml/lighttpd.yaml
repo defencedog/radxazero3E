@@ -1,0 +1,41 @@
+name: lighttpd
+services:
+  lighttpd:
+    cpu_shares: 90
+    command: []
+    container_name: ukhan_site
+    deploy:
+      resources:
+        limits:
+          memory: 3724M
+    hostname: ukhan_site
+    image: rtsp/lighttpd:1.4.76
+    labels:
+      icon: https://icon.casaos.io/main/all/lighttpd.png
+    ports:
+      - target: 80
+        published: "5555"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/hugo/project/themes/congo/exampleSite/public
+        target: /var/www/html
+    devices: []
+    cap_add: []
+    environment: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://icon.casaos.io/main/all/lighttpd.png
+  index: /
+  is_uncontrolled: false
+  port_map: "5555"
+  scheme: http
+  store_app_id: lighttpd
+  title:
+    custom: ""
+    en_us: lighttpd
