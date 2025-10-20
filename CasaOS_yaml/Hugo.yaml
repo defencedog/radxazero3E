@@ -2,14 +2,14 @@ name: hugo
 services:
   hugo:
     cpu_shares: 90
-    command:
+    command: ##sequence is important
       - serve
       - --disableFastRender
       - --minify
       - --appendPort=false
       - --environment=production
       - --bind=0.0.0.0
-      - --baseURL=https://cv.ukhan.org/
+      - --baseURL=https://xx.ukhan.org/ ##cloudflare tunnel
     container_name: hugo
     deploy:
       resources:
