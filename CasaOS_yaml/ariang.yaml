@@ -1,0 +1,47 @@
+name: fearless_jackson
+services:
+  ariang:
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 7686M
+    environment:
+      - ARIA2RPCPORT=443
+      - PGID=1000
+      - PUID=1000
+    image: hurlenko/aria2-ariang:latest
+    labels:
+      icon: https://icon.casaos.io/main/all/ariang.png
+    ports:
+      - target: 8080
+        published: "7443"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /media/radxa2tb/aria
+        target: /aria2/data
+      - type: bind
+        source: /media/radxaRaid480gb/AppData/aria
+        target: /aria2/conf
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://icon.casaos.io/main/all/ariang.png
+  index: /
+  is_uncontrolled: false
+  port_map: "7443"
+  scheme: http
+  store_app_id: fearless_jackson
+  title:
+    custom: ""
+    en_us: ariang
