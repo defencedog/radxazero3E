@@ -10,7 +10,7 @@ sudo apt install update && sudo apt upgrade -y
 sudo apt install -y 7zip mesa-utils mesa-opencl-icd clinfo linux-headers-vendor-rk35xx python-is-python3 
 ```
 ## Install Recoll 
-Instructions [in this repo](https://github.com/defencedog/radxazero3E/tree/main/recoll_debian)
+Instructions [in this repo](https://github.com/defencedog/radxazero3E/tree/main/apps/recoll_debian)
 ## Install ripgrepall
 Pre-compiled binaries [in this repo](https://github.com/defencedog/orangepi3b_v2.1/tree/main/files_tools/ripgrep-all)
 ## Replace `mv` & `cp` bash commands
@@ -40,13 +40,13 @@ To be installed using `sudo armbian-config` > Software > Softy
 - Dozzle
 - NGINX Proxy Manager to get valid SSL certificates [Youtube tutorial](https://www.youtube.com/watch?v=qlcVx-k-02E)
 ### Favourite Docker Apps
-Some CasaOS compatible `yamls` are present [here](https://github.com/defencedog/radxazero3E/tree/main/CasaOS_yaml)
+Some CasaOS compatible `yamls` are present [here](https://github.com/defencedog/radxazero3E/tree/main/files_tools/CasaOS_yaml)
 - Jellyfin (from default CasaOS store its RKMPP support produce better results)
 
 Please read Rockchip [VPU enabling instructions](https://jellyfin.org/docs/general/administration/hardware-acceleration/rockchip/) Remember to add x4 devices.  `/dev/mali0` is not present on RK3566 also remember to create `99-rk-device-permissions.rules` as written in instructions. In CasaOS `Priveleges` slider should be ON
 - sist2
 
-Its an an advance file searcher / indexer. Use [sqlite database](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2_less_resource.yaml) & other tweaks for saving resources. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
+Its an an advance file searcher / indexer. Use [sqlite database](https://github.com/defencedog/radxazero3E/blob/main/files_tools/CasaOS_yaml/sist2_less_resource.yaml) & other tweaks for saving resources. Had to be manually installed in CasaOS. My [instructions with image](https://github.com/simon987/sist2/issues/499#issue-2583469960)
 - Syncthing
 
 Its an synchronisation service to sync multiple locations in multiple devices
@@ -56,7 +56,7 @@ A library database creator / editor with _full-text search_ [FTS capability](htt
 - ~Calibre-Web~ Not good for notes / full text search; use Paperless-ngx
 
 A GUI reader / webUI for library database created by Calibre
-- [Paperless-ngx](https://github.com/defencedog/radxazero3E/tree/main/paperless-ngx) 
+- [Paperless-ngx](https://github.com/defencedog/radxazero3E/tree/main/apps/paperless-ngx) 
 ### Samba sharing with CasaOS
 The normal `smb.conf` is not present & is replaced by `smb.casa.conf`. Lets assume we have a directory (external USB or memory card) mounted at `/media/sdcard` (use `df -hT` to know mount points) To make it a NAS with name _radxasdcard_
 ```
@@ -103,9 +103,9 @@ guest ok = No #Yes, for Public access
 >
 > smbd --foreground --no-process-group $SMBDOPTIONS (code=exited...
 > 
-Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/etc_samba)
+Compare your `.conf` contents at `/etc/samba` with [mine](https://github.com/defencedog/radxazero3E/tree/main/files_tools/etc_samba)
 ### Bug: OCI / Port-bind CasaOS or Resources not available or Cannot start new thread
-Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/CasaOS_Docker_Container_Bug.md)
+Solution [in this repo](https://github.com/defencedog/radxazero3E/blob/main/tutorials/CasaOS_Docker_Container_Bug.md)
 
 ### CLI Monitoring tools for containers
 - `watch -n 1 'docker stats --no-stream | sort -k 4 -h -r | head -10'`

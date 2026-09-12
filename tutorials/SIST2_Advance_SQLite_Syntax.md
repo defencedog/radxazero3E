@@ -1,6 +1,6 @@
 # SIST2 SQLITE Queries
 No need to use its socker with `elasticseatch`. The `sqlite` backend is more than enough for an SBC & provides proximity searches
-> https://github.com/defencedog/radxazero3E/blob/main/CasaOS_yaml/sist2-admin_sqlite.yaml
+> https://github.com/defencedog/radxazero3E/blob/main/files_tools/CasaOS_yaml/sist2-admin_sqlite.yaml
 
 *Preferably use CAPITAL letters for programming syntax & lower for content syntax to be searched*
 > https://www.sqlite.org/fts5.html

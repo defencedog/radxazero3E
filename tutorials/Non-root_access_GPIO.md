@@ -41,4 +41,4 @@ drwxr-xr-x 3 root root    0 Oct 14 02:04 gpiochip64
 drwxr-xr-x 3 root root    0 Oct 14 02:04 gpiochip96
 -rwxrwx--- 1 root gpio 4096 Oct 14 02:04 unexport
 ```
-You can now run GPIO related scripts without `sudo` for instance [this project](https://github.com/defencedog/radxazero3E/blob/main/High_Power_Led_GPIO_Switch.md)
+You can now run GPIO related scripts without `sudo` for instance [this project](https://github.com/defencedog/radxazero3E/blob/main/tutorials/High_Power_Led_GPIO_Switch.md)

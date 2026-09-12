@@ -45,5 +45,5 @@ So I issued in the terminal (but **didn't press yes**) `sudo podman system reset
 
 The other issue I discovered relates to `systemd` & startup of containers at boot. This is dicsussed here:
 
-> https://github.com/defencedog/radxazero3E/blob/main/Systemd_Service_Docker_health_checker.md
+> https://github.com/defencedog/radxazero3E/blob/main/tutorials/Systemd_Service_Docker_health_checker.md
 
