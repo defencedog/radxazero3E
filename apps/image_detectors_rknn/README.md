@@ -25,7 +25,7 @@ This repository provides a single, unified Python inference engine (`detect.py`)
 |---|---|---|
 | **SoC** | Rockchip **RK3566** (Quad-Core Cortex-A55 @ 1.8 GHz, 0.8 TOPS NPU) | Rockchip **RK3588** / **RK3588S** (6.0 TOPS), **RK3568**, **RK3562**, **RV1106** / **RV1103** |
 | **SBCs** | Radxa Zero 3W / 3E (4 GB LPDDR4) | Orange Pi 3B, Orange Pi 5 / 5 Plus, Radxa ROCK 5B / 5A, Quartz64 |
-| **Operating System** | Debian 12 (Bookworm) 64-bit / Linux Kernel 5.10.160-rockchip | Ubuntu 22.04 / 24.04 LTS (ARM64), Armbian, DietPi |
+| **Operating System** | Armbian 25.5.2 (Ubuntu 24.04 LTS / noble) 64-bit / Linux Kernel 6.1.115-vendor-rk35xx | Debian 12 (Bookworm), Ubuntu 22.04 / 24.04 LTS (ARM64), DietPi, official Radxa OS |
 | **NPU Driver / Runtime** | `librknnrt.so` v2.3.2 (Driver v0.9.8) | `librknnrt` >= 2.0.0 |
 | **Python** | Python 3.10, 3.11, 3.12 | Python >= 3.8 |
 
