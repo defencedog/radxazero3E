@@ -34,7 +34,7 @@ radxazero3E/
 ├── tutorials/       # System administration, Docker watchdog, and GPIO tutorials
 ├── kernels/         # Device tree overlays (dtb_dtbo) and overclocked DTBs
 ├── hardware/        # Schematics, GPIO pinouts, DXF 3D case model, and peripherals
-├── apps/            # Self-hosted applications (Immich VPU/NPU, Paperless-ngx, Recoll)
+├── apps/            # Self-hosted applications (Immich VPU/NPU, RKNN Object Detectors, Paperless-ngx, Recoll)
 ├── files_tools/     # CasaOS YAML templates, Android companion clients, Samba configs
 ├── .gitignore       # Repository exclusion rules
 └── README.md        # Master documentation (this file)
@@ -75,6 +75,7 @@ Official schematics, mechanical drawings, and peripheral hardware:
 ### 4. [Self-Hosted Application Stacks (`apps/`)](./apps/)
 Optimized application stacks designed for the RK3566:
 - [**Immich with Rockchip VPU/NPU Acceleration**](./apps/immich_Rockchip_VPU_NPU/): Immich photo and video management with hardware video transcoding (Rockchip MPP/RGA VPU) and NPU machine learning acceleration.
+- [**Universal RKNN Object Detectors**](./apps/image_detectors_rknn/): Multi-architecture edge AI object detection suite (PP-PicoDet, YOLOv8, YOLO11, YOLO-NAS) on the RK3566 NPU with automated benchmarking.
 - [**Paperless-ngx**](./apps/paperless-ngx/): Document management system with optimized SQLite configuration and OCR tuning.
 - [**Recoll Full-Text Desktop Search**](./apps/recoll_debian/): Complete desktop search engine package for Debian/Armbian with prebuilt archives and user guide.
 

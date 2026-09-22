@@ -1,0 +1,7 @@
+# Core runtime dependencies for RKNN Object Detection on Rockchip RK3566 / RK3588
+# Note: rknn-toolkit-lite2 must be installed matching your librknnrt version (v2.3.2 recommended)
+# from official Rockchip wheels or pip if wheel is present.
+
+numpy>=1.20.0,<2.0.0
+opencv-python-headless>=4.5.0
+rknn-toolkit-lite2>=2.3.0
