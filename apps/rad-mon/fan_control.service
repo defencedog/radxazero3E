@@ -1,0 +1,13 @@
+[Unit]
+Description=Hardware PWM Fan Control Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/fan_control.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
